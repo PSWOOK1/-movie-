@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>박신욱 과제 (Movie)</title>
+    <script src="./mdb.js"></script>
+    <style>
+        .mytitle {
+            height: 100px;
+            width: auto;
+            color: rgb(252, 240, 4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(14, 29, 169);
+            background-position: center;
+            background-size: cover;
+            border-radius: 5px;
+            text-shadow: -1.5px 0px rgb(22, 22, 41), 0px 1.5px rgb(22, 22, 41), 1.5px 0px rgb(22, 22, 41), 0px -1.5px rgb(22, 22, 41);
+        }
+
+        .bodyy {
+            background-color: rgba(187, 200, 243, 0.771);
+        }
+
+        .search {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .btn {
+            width: auto;
+            height: auto;
+            font-size: 22px;
+        }
+
+        .card {
+            width: 365px;
+            height: 520px;
+            border-radius: 15px;
+            margin: 50px;
+            float: left;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            backface-visibility: relative;
+            box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
+            /* 카드 크기 계산에 경계 상자를 포함 */
+        }
+
+        .card .content {
+            text-align: center;
+            width: 100%;
+            /* 컨테이너 너비에 맞춤 */
+            height: 100%;
+            /* 컨테이너 높이에 맞춤 */
+        }
+
+        .card img {
+            width: 100%;
+            /* 이미지 너비를 컨테이너에 맞춤 */
+            height: auto;
+            /* 이미지 높이를 자동으로 조정 */
+            border-radius: 15px;
+        }
+
+        .card p {
+            display: none;
+            text-align: center;
+            overflow: auto;
+            max-height: 380px;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+            background-color: rgb(231, 228, 228);
+        }
+
+        .card.flipped .content {
+            transform: rotateY(180deg);
+        }
+
+        .card.flipped img {
+            display: none;
+        }
+
+        .card.flipped p {
+            display: block;
+        }
+
+        .card .rating {
+            text-align: center;
+            /* 텍스트를 가운데 정렬합니다. */
+            position: absolute;
+            /* 절대 위치를 사용하여 배치합니다. */
+            top: 50%;
+            /* 상단을 가운데로 이동합니다. */
+            left: 50%;
+            /* 왼쪽을 가운데로 이동합니다. */
+            transform: translate(-50%, -50%);
+            /* 가운데 정렬을 위한 이동 트랜스폼을 적용합니다. */
+        }
+
+        .rating {
+            font-size: 48px;
+            /* 글자 크기 증가 */
+            text-shadow: -2px 0px rgb(0, 0, 0), 0px 2px rgb(0, 0, 0), 2px 0px rgb(0, 0, 0), 0px -2px rgb(0, 0, 0);
+            color: rgb(253, 206, 18);
+        }
+    </style>
+</head>
+
+<body class="bodyy">
+    <header class="mytitle">
+        <h1>Choose Your Movie!</h1>
+    </header>
+    <div class="search">
+        <p>영화 검색: <input type="text" placeholder="search your movie." style="width:auto;height:auto;font-size:28px">
+            <button class="btn"> 검색 </button>
+        </p>
+    </div>
+    <div id="movie-container">
+    </div>
+</body>
+
+</html>
