@@ -3,7 +3,7 @@
 
 <head>
     <title>박신욱 과제 (Movie)</title>
-    <script src="./mdb.js"></script>
+    
     <style>
         .mytitle {
             height: 100px;
@@ -117,12 +117,13 @@
         <h1>Choose Your Movie!</h1>
     </header>
     <div class="search">
-        <p>영화 검색: <input type="text" placeholder="search your movie." style="width:auto;height:auto;font-size:28px">
-            <button class="btn"> 검색 </button>
+        <p>영화 검색: <input type="text" id="searchinput" placeholder="search your movie." style="width:auto;height:auto;font-size:28px">
+            <button class="btn" id="searchbtn"> 검색 </button>
         </p>
     </div>
     <div id="movie-container">
     </div>
 </body>
 
+<script defer src="./mdb.js"></script>
 </html>
